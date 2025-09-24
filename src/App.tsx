@@ -12,6 +12,10 @@ import Register from "./pages/auth/Register";
 
 // Patient Pages
 import PatientDashboard from "./pages/patient/Dashboard";
+import PatientTreatments from "./pages/patient/Treatments";
+import PatientReports from "./pages/patient/Reports";
+import PatientConsents from "./pages/patient/Consents";
+import PatientAlerts from "./pages/patient/Alerts";
 
 // Doctor Pages  
 import DoctorDashboard from "./pages/doctor/Dashboard";
@@ -64,28 +68,28 @@ const App = () => (
           <Route path="/patient/treatments" element={
             <RouteGuard requiredRole="patient">
               <AppShell>
-                <div className="p-8 text-center">Treatments page coming soon...</div>
+                <PatientTreatments />
               </AppShell>
             </RouteGuard>
           } />
           <Route path="/patient/reports" element={
             <RouteGuard requiredRole="patient">
               <AppShell>
-                <div className="p-8 text-center">Reports page coming soon...</div>
+                <PatientReports />
               </AppShell>
             </RouteGuard>
           } />
           <Route path="/patient/consents" element={
             <RouteGuard requiredRole="patient">
               <AppShell>
-                <div className="p-8 text-center">Consents page coming soon...</div>
+                <PatientConsents />
               </AppShell>
             </RouteGuard>
           } />
           <Route path="/patient/alerts" element={
             <RouteGuard requiredRole="patient">
               <AppShell>
-                <div className="p-8 text-center">Alerts page coming soon...</div>
+                <PatientAlerts />
               </AppShell>
             </RouteGuard>
           } />
