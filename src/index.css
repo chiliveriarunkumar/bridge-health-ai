@@ -2,95 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* UHB Design System - Modern Healthcare UI */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Brand Colors */
+    --brand: 237 92% 63%;           /* #6366F1 indigo-500 */
+    --brand-foreground: 0 0% 100%;  /* white */
+    --accent: 188 96% 53%;          /* #22D3EE cyan-400 */
+    --success: 142 76% 45%;         /* #34C759 emerald-500 */
+    --warning: 43 96% 56%;          /* #F59E0B amber-500 */
+    --danger: 0 84% 60%;            /* #EF4444 red-500 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    /* Surfaces */
+    --background: 240 10% 98%;      /* slate-50 #F8FAFC */
+    --foreground: 222 84% 5%;       /* slate-900 */
+    --card: 0 0% 100%;              /* white */
+    --card-foreground: 222 84% 5%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 84% 5%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Semantic UI Colors */
+    --primary: 237 92% 63%;         /* brand */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;       /* slate-100 */
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent-ui: 188 96% 53%;       /* cyan for accents */
+    --accent-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Glass & Surfaces */
+    --glass: 0 0% 100% / 0.8;       /* glass morphism */
+    --border: 214 32% 91%;          /* slate-200 */
+    --input: 214 32% 91%;
+    --ring: 237 92% 63%;            /* brand focus ring */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(237 92% 63%), hsl(188 96% 53%));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.8), hsl(0 0% 100% / 0.4));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(240 10% 98%));
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Shadows */
+    --shadow-card: 0 6px 18px hsl(222 84% 5% / 0.06);
+    --shadow-elevate: 0 10px 30px hsl(222 84% 5% / 0.1);
+    --shadow-glass: 0 8px 32px hsl(222 84% 5% / 0.12);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Layout */
+    --radius: 1rem;                 /* 16px */
+    --radius-xl: 1.25rem;           /* 20px */
+    --radius-2xl: 1.5rem;           /* 24px */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 240 10% 98%;
+    --sidebar-foreground: 222 84% 5%;
+    --sidebar-primary: 237 92% 63%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 237 92% 63%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
+    /* Dark Mode - Healthcare Professional Theme */
+    --background: 222 84% 5%;        /* slate-900 */
+    --foreground: 210 40% 98%;       /* slate-50 */
+    --card: 217 33% 17%;             /* slate-800 */
     --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
+    --popover: 217 33% 17%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Brand remains consistent */
+    --brand: 237 92% 63%;
+    --brand-foreground: 0 0% 100%;
+    --accent: 188 96% 53%;
+    --success: 142 76% 45%;
+    --warning: 43 96% 56%;
+    --danger: 0 84% 60%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --primary: 237 92% 63%;          /* brand */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 33% 17%;        /* slate-800 */
     --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%; /* slate-400 */
+    --accent-ui: 188 96% 53%;
+    --accent-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Dark Glass */
+    --glass: 217 33% 17% / 0.8;
+    --border: 217 33% 17%;           /* slate-800 */
+    --input: 217 33% 17%;
+    --ring: 237 92% 63%;
+    
+    /* Dark Gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(237 92% 63%), hsl(188 96% 53%));
+    --gradient-glass: linear-gradient(135deg, hsl(217 33% 17% / 0.8), hsl(217 33% 17% / 0.4));
+    --gradient-card: linear-gradient(145deg, hsl(217 33% 17%), hsl(222 84% 5%));
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Dark Shadows */
+    --shadow-card: 0 6px 18px hsl(0 0% 0% / 0.2);
+    --shadow-elevate: 0 10px 30px hsl(0 0% 0% / 0.3);
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.4);
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    /* Dark Sidebar */
+    --sidebar-background: 222 84% 5%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 237 92% 63%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 237 92% 63%;
   }
 }
 
@@ -99,7 +126,94 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Glass Components */
+  .glass-card {
+    @apply backdrop-blur-md bg-card/80 border border-border/50 shadow-[var(--shadow-glass)] rounded-2xl;
+  }
+
+  .glass-nav {
+    @apply backdrop-blur-md bg-background/80 border-b border-border/50;
+  }
+
+  /* Gradient Components */
+  .gradient-brand {
+    background: var(--gradient-brand);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  /* Interactive Elements */
+  .btn-primary {
+    @apply bg-brand text-brand-foreground hover:bg-brand/90 active:scale-95 
+           transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+
+  .btn-glass {
+    @apply glass-card hover:bg-card/90 active:scale-95 
+           transition-all duration-200 hover:shadow-[var(--shadow-elevate)];
+  }
+
+  /* Medical Status Pills */
+  .pill-success {
+    @apply bg-success/10 text-success border-success/20 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .pill-warning {
+    @apply bg-warning/10 text-warning border-warning/20 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .pill-danger {
+    @apply bg-danger/10 text-danger border-danger/20 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .pill-accent {
+    @apply bg-accent-ui/10 text-accent-ui border-accent-ui/20 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  /* Shimmer Animation */
+  .shimmer {
+    @apply animate-pulse bg-gradient-to-r from-muted/20 via-muted/40 to-muted/20 bg-[length:200%_100%];
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Focus States */
+  .focus-brand {
+    @apply focus:outline-none focus:ring-2 focus:ring-brand/60 focus:ring-offset-2 focus:ring-offset-background;
   }
 }

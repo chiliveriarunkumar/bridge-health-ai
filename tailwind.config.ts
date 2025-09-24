@@ -57,11 +57,27 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // UHB Healthcare Brand Colors
+        brand: {
+          DEFAULT: "hsl(var(--brand))",
+          foreground: "hsl(var(--brand-foreground))",
+        },
+        success: "hsl(var(--success))",
+        warning: "hsl(var(--warning))",
+        danger: "hsl(var(--danger))",
+        "accent-ui": "hsl(var(--accent-ui))",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "var(--radius-xl)",
+        "2xl": "var(--radius-2xl)",
+      },
+      boxShadow: {
+        card: "var(--shadow-card)",
+        elevate: "var(--shadow-elevate)",
+        glass: "var(--shadow-glass)",
       },
       keyframes: {
         "accordion-down": {
